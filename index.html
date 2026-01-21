@@ -1,13 +1,185 @@
 <!doctype html>
-<html lang="en">
+<html lang="el">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Website Dentist</title>
+    <title>Οδοντιατρείο — Website</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Website Dentist</h1>
-    <p>It works ✅</p>
+    <header class="header">
+      <div class="container nav">
+        <div class="logo">Οδοντιατρείο</div>
+        <nav class="menu">
+          <a href="#services">Υπηρεσίες</a>
+          <a href="#about">Σχετικά</a>
+          <a href="#contact">Επικοινωνία</a>
+        </nav>
+        <a class="btn" href="#contact">Κλείσε Ραντεβού</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <p class="badge">Φροντίδα με συνέπεια & εμπιστοσύνη</p>
+            <h1>Υγεία & αισθητική για το χαμόγελό σας.</h1>
+            <p class="lead">
+              Σύγχρονο οδοντιατρείο με έμφαση στην άνεση, την πρόληψη και τη
+              σωστή ενημέρωση. Κλείστε ραντεβού εύκολα.
+            </p>
+            <div class="hero-actions">
+              <a class="btn" href="#contact">Κλείσε Ραντεβού</a>
+              <a class="btn btn-ghost" href="#services">Δες Υπηρεσίες</a>
+            </div>
+            <div class="stats">
+              <div class="stat">
+                <div class="stat-num">10+</div>
+                <div class="stat-label">Χρόνια εμπειρίας</div>
+              </div>
+              <div class="stat">
+                <div class="stat-num">1.500+</div>
+                <div class="stat-label">Επισκέψεις</div>
+              </div>
+              <div class="stat">
+                <div class="stat-num">4.9/5</div>
+                <div class="stat-label">Αξιολογήσεις</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-card" aria-label="Κάρτα πληροφοριών">
+            <div class="hero-card-top">
+              <div class="avatar" aria-hidden="true"></div>
+              <div>
+                <div class="doc-name">Δρ. Οδοντίατρος</div>
+                <div class="doc-sub">Γενική Οδοντιατρική • Αισθητική</div>
+              </div>
+            </div>
+
+            <div class="info">
+              <div class="info-row">
+                <span>📍</span><span>Κέντρο, Αθήνα</span>
+              </div>
+              <div class="info-row">
+                <span>🕒</span><span>Δευ–Παρ 09:00–20:00</span>
+              </div>
+              <div class="info-row">
+                <span>📞</span><span>210 000 0000</span>
+              </div>
+            </div>
+
+            <a class="btn btn-full" href="#contact">Ζήτησε Ραντεβού</a>
+            <p class="small">
+              *Δείγμα site για portfolio. Τα στοιχεία είναι ενδεικτικά.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="section">
+        <div class="container">
+          <h2>Υπηρεσίες</h2>
+          <p class="section-lead">
+            Καθαρισμός, σφραγίσματα, λεύκανση, αισθητική αποκατάσταση και
+            εξατομικευμένη φροντίδα.
+          </p>
+
+          <div class="cards">
+            <article class="card">
+              <h3>Καθαρισμός & Πρόληψη</h3>
+              <p>Έλεγχος, καθαρισμός και οδηγίες στοματικής υγιεινής.</p>
+            </article>
+            <article class="card">
+              <h3>Αισθητική Οδοντιατρική</h3>
+              <p>Λεύκανση, όψεις ρητίνης/πορσελάνης, βελτίωση χαμόγελου.</p>
+            </article>
+            <article class="card">
+              <h3>Αποκαταστάσεις</h3>
+              <p>Σφραγίσματα, στεφάνες, γέφυρες, λύσεις ανά περίπτωση.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section alt">
+        <div class="container two-col">
+          <div>
+            <h2>Σχετικά με το ιατρείο</h2>
+            <p>
+              Επικεντρωνόμαστε στην άνεση και την σωστή επικοινωνία. Στόχος μας
+              είναι ένα πλάνο θεραπείας που καταλαβαίνετε και εμπιστεύεστε.
+            </p>
+            <ul class="list">
+              <li>✅ Απολύμανση & πρωτόκολλα ασφάλειας</li>
+              <li>✅ Σύγχρονος εξοπλισμός</li>
+              <li>✅ Φιλική εμπειρία για παιδιά & ενήλικες</li>
+            </ul>
+          </div>
+          <div class="about-box">
+            <h3>Γιατί να μας επιλέξετε</h3>
+            <p>
+              Καθαρή ενημέρωση, ήρεμο περιβάλλον και σταθερή ποιότητα σε κάθε
+              επίσκεψη.
+            </p>
+            <div class="pill-row">
+              <span class="pill">Εμπιστοσύνη</span>
+              <span class="pill">Άνεση</span>
+              <span class="pill">Ακρίβεια</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <div class="container">
+          <h2>Επικοινωνία</h2>
+          <p class="section-lead">
+            Στείλτε μήνυμα και θα σας καλέσουμε για επιβεβαίωση ραντεβού.
+          </p>
+
+          <div class="contact-grid">
+            <form class="form" onsubmit="return false;">
+              <label>
+                Ονοματεπώνυμο
+                <input type="text" placeholder="π.χ. Γιώργος Κωνσταντινίδης" />
+              </label>
+              <label>
+                Τηλέφωνο
+                <input type="tel" placeholder="π.χ. 69xx xxx xxx" />
+              </label>
+              <label>
+                Μήνυμα
+                <textarea rows="5" placeholder="Τι χρειάζεστε;"></textarea>
+              </label>
+              <button class="btn" type="submit">Αποστολή</button>
+              <p class="small">
+                *Η φόρμα είναι demo (χωρίς αποστολή). Θα τη συνδέσουμε αργότερα.
+              </p>
+            </form>
+
+            <div class="map-box">
+              <h3>Στοιχεία</h3>
+              <p class="muted">📍 Κέντρο, Αθήνα</p>
+              <p class="muted">📞 210 000 0000</p>
+              <p class="muted">✉️ info@dentist.gr</p>
+              <div class="fake-map">Χάρτης (demo)</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-row">
+        <span>© <span id="y"></span> Οδοντιατρείο</span>
+        <span class="muted">Made with HTML/CSS • GitHub Pages</span>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
