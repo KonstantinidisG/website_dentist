@@ -187,9 +187,6 @@ a {
   grid-template-columns: 1fr 1fr;
   gap: 18px;
   align-items: stretch;
-
-  /* κοινό ύψος για ΑΡΙΣΤΕΡΑ + ΔΕΞΙΑ (μικραίνει και τη φωτό) */
-  height: clamp(320px, 52vh, 750px);
 }
 
 .hero-left,
@@ -225,7 +222,7 @@ a {
   border-radius: 22px;
   overflow: hidden;
   box-shadow: var(--shadow);
-  align-self: stretch; /* 🔑 γεμίζει το ύψος του grid row */
+  height: 500px;
 }
 
 .hero-photo-wrap {
@@ -239,6 +236,7 @@ a {
   height: 100%;
   min-height: 100%;
   object-fit: cover;
+  object-position: center 20%; /* κρατά περισσότερο πάνω (πρόσωπο) */
   display: block;
   filter: saturate(1.05) contrast(1.05);
 }
@@ -410,6 +408,18 @@ textarea:focus {
   }
   .contact-2 {
     grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 980px) {
+  .hero-card {
+    height: 380px; /* σταθερό και στο tablet */
+  }
+}
+
+@media (max-width: 520px) {
+  .hero-card {
+    height: 320px; /* σταθερό και στο κινητό */
   }
 }
 
