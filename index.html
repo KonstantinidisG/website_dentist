@@ -3,174 +3,333 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Για GitHub Pages (δουλεύει σωστά με / και χωρίς /) -->
     <base href="/website_dentist/" />
-    <title>Οδοντιατρείο — Website</title>
+
+    <title>Οδοντιατρείο Thomas Gousoulis</title>
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
+    <!-- HEADER -->
     <header class="header">
       <div class="container nav">
-        <div class="logo">Οδοντιατρείο</div>
-        <nav class="menu">
+        <a class="brand" href="#top" aria-label="Αρχική">
+          <img class="brand-logo" src="assets/images/logo.png" alt="Λογότυπο" />
+          <div class="brand-text">
+            <div class="brand-name">Οδοντιατρείο</div>
+            <div class="brand-sub">Thomas Gousoulis</div>
+          </div>
+        </a>
+
+        <nav class="menu" aria-label="Κύρια πλοήγηση">
           <a href="#services">Υπηρεσίες</a>
           <a href="#about">Σχετικά</a>
           <a href="#contact">Επικοινωνία</a>
         </nav>
-        <a class="btn" href="#contact">Κλείσε Ραντεβού</a>
-        <a class="btn btn-ghost call" href="tel:+302100000000">Κάλεσε τώρα</a>
+
+        <div class="nav-actions">
+          <a class="btn" href="tel:+306909591450">Κάλεσε τώρα</a>
+          <a class="btn" href="#booking">Κλείσε ραντεβού</a>
+        </div>
       </div>
     </header>
 
-    <main>
+    <main id="top">
+      <!-- QUOTE / MOTTO SECTION -->
+      <section class="motto">
+        <div class="container motto-box">
+          <h1 class="motto-title">
+            Ένα χαμόγελο μπορεί να σου αλλάξει τη μέρα
+          </h1>
+
+          <!-- simple sketch smile (SVG) -->
+          <div class="motto-smile" aria-hidden="true">
+            <svg
+              viewBox="0 0 240 60"
+              width="240"
+              height="60"
+              role="img"
+              aria-label=""
+            >
+              <path
+                d="M15 15 C 55 55, 185 55, 225 15"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="6"
+                stroke-linecap="round"
+              />
+            </svg>
+          </div>
+
+          <p class="motto-sub muted">
+            Πρόληψη • Άνεση • Σύγχρονη οδοντιατρική — με ξεκάθαρη ενημέρωση.
+          </p>
+        </div>
+      </section>
+
+      <!-- HERO -->
       <section class="hero">
         <div class="container hero-grid">
-          <div>
-            <p class="badge">Φροντίδα με συνέπεια & εμπιστοσύνη</p>
-            <h1>Υγεία & αισθητική για το χαμόγελό σας.</h1>
-            <p class="lead">
-              Σύγχρονο οδοντιατρείο με έμφαση στην άνεση, την πρόληψη και τη
-              σωστή ενημέρωση. Κλείστε ραντεβού εύκολα.
+          <!-- Left: only text -->
+          <div class="hero-left">
+            <p class="badge">Χειρουργική • Αισθητική • Πρόληψη</p>
+            <h2 class="hero-title">
+              Φροντίδα που εμπιστεύεστε, αποτέλεσμα που φαίνεται.
+            </h2>
+            <p class="hero-lead muted">
+              Στο <strong>Οδοντιατρείο Thomas Gousoulis</strong> συνδυάζουμε
+              σύγχρονη τεχνολογία με ανθρώπινη προσέγγιση. Στόχος μας είναι η
+              άνεσή σας, η σωστή ενημέρωση και ένα εξατομικευμένο πλάνο
+              θεραπείας.
             </p>
-            <div class="hero-actions">
-              <a class="btn" href="#contact">Κλείσε Ραντεβού</a>
-              <a class="btn btn-ghost" href="#services">Δες Υπηρεσίες</a>
-            </div>
-            <div class="stats">
-              <div class="stat">
-                <div class="stat-num">10+</div>
-                <div class="stat-label">Χρόνια εμπειρίας</div>
-              </div>
-              <div class="stat">
-                <div class="stat-num">1.500+</div>
-                <div class="stat-label">Επισκέψεις</div>
-              </div>
-              <div class="stat">
-                <div class="stat-num">4.9/5</div>
-                <div class="stat-label">Αξιολογήσεις</div>
-              </div>
-            </div>
+            <p class="hero-lead muted">
+              Από προληπτικό έλεγχο και καθαρισμό μέχρι αισθητική αποκατάσταση
+              και εμφυτεύματα, προχωράμε βήμα-βήμα με διαφάνεια και ποιότητα.
+            </p>
           </div>
 
-          <div class="hero-card" aria-label="Κάρτα πληροφοριών">
-            <div class="hero-card-top">
+          <!-- Right: big photo card with overlay -->
+          <aside class="hero-card" aria-label="Προφίλ ιατρού">
+            <div class="hero-photo-wrap">
               <img
+                class="hero-photo"
                 src="assets/images/dentist.jpg"
-                class="doc-photo"
-                alt="Ο οδοντίατρος"
+                alt="Θωμάς Γουσούλης — Χειρούργος Οδοντίατρος"
               />
-              <div>
-                <div class="doc-name">Δρ. Οδοντίατρος</div>
-                <div class="doc-sub">Γενική Οδοντιατρική • Αισθητική</div>
+              <div class="hero-photo-overlay">
+                <div class="doc-name">Θωμάς Γουσούλης</div>
+                <div class="doc-sub">Χειρούργος Οδοντίατρος</div>
               </div>
             </div>
-
-            <div class="info">
-              <div class="info-row">
-                <span>📍</span><span>Κέντρο, Αθήνα</span>
-              </div>
-              <div class="info-row">
-                <span>🕒</span><span>Δευ–Παρ 09:00–20:00</span>
-              </div>
-              <div class="info-row">
-                <span>📞</span><span>210 000 0000</span>
-              </div>
-            </div>
-
-            <a class="btn btn-full" href="#contact">Ζήτησε Ραντεβού</a>
-            <p class="small">
-              *Δείγμα site για portfolio. Τα στοιχεία είναι ενδεικτικά.
-            </p>
-          </div>
+          </aside>
         </div>
       </section>
 
+      <!-- SERVICES -->
       <section id="services" class="section">
         <div class="container">
-          <h2>Υπηρεσίες</h2>
-          <p class="section-lead">
-            Καθαρισμός, σφραγίσματα, λεύκανση, αισθητική αποκατάσταση και
-            εξατομικευμένη φροντίδα.
+          <h3 class="section-title">Υπηρεσίες</h3>
+          <p class="muted" style="text-align: center; margin-top: 6px">
+            Τα πιο συχνά αιτήματα με διαφάνεια και ποιότητα.
           </p>
 
-          <div class="cards">
-            <article class="card">
-              <h3>Καθαρισμός & Πρόληψη</h3>
-              <p>Έλεγχος, καθαρισμός και οδηγίες στοματικής υγιεινής.</p>
-            </article>
-            <article class="card">
-              <h3>Αισθητική Οδοντιατρική</h3>
-              <p>Λεύκανση, όψεις ρητίνης/πορσελάνης, βελτίωση χαμόγελου.</p>
-            </article>
-            <article class="card">
-              <h3>Αποκαταστάσεις</h3>
-              <p>Σφραγίσματα, στεφάνες, γέφυρες, λύσεις ανά περίπτωση.</p>
-            </article>
-          </div>
-        </div>
-      </section>
+          <div class="grid grid-3" style="margin-top: 18px">
+            <div class="card">
+              <div class="iconbox">🪥</div>
+              <strong>Καθαρισμός & Έλεγχος</strong>
+              <p>Προληπτικός καθαρισμός, φθορίωση, στοματική υγιεινή.</p>
+            </div>
 
-      <section id="about" class="section alt">
-        <div class="container two-col">
-          <div>
-            <h2>Σχετικά με το ιατρείο</h2>
-            <p>
-              Επικεντρωνόμαστε στην άνεση και την σωστή επικοινωνία. Στόχος μας
-              είναι ένα πλάνο θεραπείας που καταλαβαίνετε και εμπιστεύεστε.
-            </p>
-            <ul class="list">
-              <li>✅ Απολύμανση & πρωτόκολλα ασφάλειας</li>
-              <li>✅ Σύγχρονος εξοπλισμός</li>
-              <li>✅ Φιλική εμπειρία για παιδιά & ενήλικες</li>
-            </ul>
-          </div>
-          <div class="about-box">
-            <h3>Γιατί να μας επιλέξετε</h3>
-            <p>
-              Καθαρή ενημέρωση, ήρεμο περιβάλλον και σταθερή ποιότητα σε κάθε
-              επίσκεψη.
-            </p>
-            <div class="pill-row">
-              <span class="pill">Εμπιστοσύνη</span>
-              <span class="pill">Άνεση</span>
-              <span class="pill">Ακρίβεια</span>
+            <div class="card">
+              <div class="iconbox">✨</div>
+              <strong>Λεύκανση</strong>
+              <p>Ασφαλής λεύκανση στο ιατρείο ή/και στο σπίτι.</p>
+            </div>
+
+            <div class="card">
+              <div class="iconbox">🧩</div>
+              <strong>Εμφράξεις/Σφραγίσματα</strong>
+              <p>Αισθητικά σύνθετα ρητίνης με υψηλή αντοχή.</p>
+            </div>
+
+            <div class="card">
+              <div class="iconbox">🦷</div>
+              <strong>Ενδοδοντία (απονεύρωση)</strong>
+              <p>Ψηφιακή απεικόνιση, μηχανοκίνητη επεξεργασία ριζικών.</p>
+            </div>
+
+            <div class="card">
+              <div class="iconbox">⚙️</div>
+              <strong>Εμφυτεύματα</strong>
+              <p>Συνεργασία με στοματογναθοχειρουργό, πλάνο αποκατάστασης.</p>
+            </div>
+
+            <div class="card">
+              <div class="iconbox">👶</div>
+              <strong>Παιδοδοντία</strong>
+              <p>Ήπια προσέγγιση για παιδιά, προσαρμοσμένα πρωτόκολλα.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="contact" class="section">
-        <div class="container">
-          <h2>Επικοινωνία</h2>
-          <p class="section-lead">
-            Στείλτε μήνυμα και θα σας καλέσουμε για επιβεβαίωση ραντεβού.
-          </p>
+      <!-- ABOUT -->
+      <section id="about" class="section alt">
+        <div class="container about-grid">
+          <div>
+            <h3 class="section-title" style="text-align: left">
+              Σχετικά με εμάς
+            </h3>
+            <p class="muted" style="margin-top: 6px">
+              Η ομάδα του <strong>Οδοντιατρείο Thomas Gousoulis</strong> παρέχει
+              ολοκληρωμένη οδοντιατρική με έμφαση στην πρόληψη και στην άνεση
+              του ασθενή. Συνδυάζουμε σύγχρονη τεχνολογία με ανθρώπινη
+              προσέγγιση.
+            </p>
 
-          <div class="contact-grid">
-            <form class="form" onsubmit="return false;">
-              <label>
-                Ονοματεπώνυμο
-                <input type="text" placeholder="π.χ. Γιώργος Κωνσταντινίδης" />
+            <ul
+              style="margin-top: 10px; line-height: 1.8; padding-left: 18px"
+              class="muted"
+            >
+              <li>10+ χρόνια εμπειρίας</li>
+              <li>Ψηφιακή ακτινογραφία χαμηλής ακτινοβολίας</li>
+              <li>Ευέλικτα ωράρια & επείγοντα</li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="card">
+              <div style="display: flex; gap: 10px; align-items: flex-start">
+                <div class="iconbox">✅</div>
+                <div>
+                  <p><strong>Εγγύηση υγιεινής & ασφάλειας</strong></p>
+                  <p class="muted" style="margin-top: 8px">
+                    Αυστηρά πρωτόκολλα απολύμανσης και αποστείρωσης, με έμφαση
+                    στην ασφάλεια ασθενών και προσωπικού.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid grid-3" style="margin-top: 10px">
+              <div class="card" style="text-align: center">
+                <div class="iconbox" style="margin: 0 auto">🦷</div>
+                <div style="margin-top: 6px; font-weight: 600">Μινιμαλ</div>
+                <div class="muted" style="font-size: 12px">
+                  Καθαρός σχεδιασμός
+                </div>
+              </div>
+
+              <div class="card" style="text-align: center">
+                <div class="iconbox" style="margin: 0 auto">⏱️</div>
+                <div style="margin-top: 6px; font-weight: 600">
+                  Ευέλικτο ωράριο
+                </div>
+                <div class="muted" style="font-size: 12px">
+                  Σύμφωνα με τις ανάγκες σας
+                </div>
+              </div>
+
+              <div class="card" style="text-align: center">
+                <div class="iconbox" style="margin: 0 auto">🛡️</div>
+                <div style="margin-top: 6px; font-weight: 600">Ασφάλεια</div>
+                <div class="muted" style="font-size: 12px">
+                  Πιστοποιημένες διαδικασίες
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT + BOOKING -->
+      <section id="contact" class="section">
+        <div
+          class="container contact-2"
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            align-items: start;
+          "
+        >
+          <div>
+            <h3 class="section-title" style="text-align: left">Επικοινωνία</h3>
+            <div class="muted" style="margin-top: 6px">
+              Καλέστε μας ή στείλτε μήνυμα. Απαντάμε άμεσα.
+            </div>
+
+            <div
+              style="margin-top: 10px; display: grid; gap: 6px; font-size: 14px"
+            >
+              <div>📞 <a href="tel:+306909591450">+30 690 959 1450</a></div>
+              <div>
+                ✉️ <a href="mailto:info@smilecare.gr">info@smilecare.gr</a>
+              </div>
+              <div>📍 Καραολή & Δημητρίου 47, Νεάπολη, Λάρισα</div>
+            </div>
+
+            <div class="map" style="margin-top: 12px">
+              <iframe
+                title="Χάρτης"
+                src="https://www.google.com/maps?q=Καραολή%20%26%20Δημητρίου%2047,%20Νεάπολη,%20Λάρισα&output=embed"
+                width="100%"
+                height="260"
+                style="border: 0; border-radius: 16px"
+                loading="lazy"
+              ></iframe>
+            </div>
+
+            <div style="margin-top: 10px">
+              <a
+                class="btn secondary"
+                href="https://www.google.com/maps/search/?api=1&query=Καραολή%20%26%20Δημητρίου%2047,%20Νεάπολη,%20Λάρισα"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Άνοιγμα στους Χάρτες
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-card" id="booking">
+            <h4 style="margin: 0 0 8px 0">Κλείσε ραντεβού</h4>
+            <form id="book-form">
+              <div class="row">
+                <label
+                  >Ημερομηνία
+                  <input type="date" name="date" id="date" required />
+                </label>
+                <label
+                  >Ώρα
+                  <select name="time" id="time-select" required>
+                    <option value="" disabled selected>Επιλογή ώρας</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="row" style="margin-top: 8px">
+                <label
+                  >Ονοματεπώνυμο
+                  <input name="name" required />
+                </label>
+                <label
+                  >Τηλέφωνο
+                  <input type="tel" name="phone" />
+                </label>
+              </div>
+
+              <label style="margin-top: 8px"
+                >Email
+                <input type="email" name="email" />
               </label>
-              <label>
-                Τηλέφωνο
-                <input type="tel" placeholder="π.χ. 69xx xxx xxx" />
+
+              <label style="margin-top: 8px"
+                >Σημειώσεις (προαιρετικά)
+                <textarea name="notes" rows="3"></textarea>
               </label>
-              <label>
-                Μήνυμα
-                <textarea rows="5" placeholder="Τι χρειάζεστε;"></textarea>
-              </label>
-              <button class="btn" type="submit">Αποστολή</button>
-              <p class="small">
-                *Η φόρμα είναι demo (χωρίς αποστολή). Θα τη συνδέσουμε αργότερα.
-              </p>
+
+              <div
+                style="
+                  display: flex;
+                  justify-content: flex-end;
+                  gap: 8px;
+                  margin-top: 12px;
+                "
+              >
+                <button type="reset" class="btn secondary">Άκυρο</button>
+                <button class="btn" type="submit">Επιβεβαίωση</button>
+              </div>
+
+              <div id="book-msg" class="muted" style="margin-top: 8px"></div>
             </form>
 
-            <div class="map-box">
-              <h3>Στοιχεία</h3>
-              <p class="muted">📍 Κέντρο, Αθήνα</p>
-              <p class="muted">📞 210 000 0000</p>
-              <p class="muted">✉️ info@dentist.gr</p>
-              <div class="fake-map">Χάρτης (demo)</div>
+            <div class="muted" style="margin-top: 10px; font-size: 12px">
+              *Demo: τα “κενά ραντεβού” αποθηκεύονται στη συσκευή σας
+              (localStorage). Για πραγματικό online σύστημα (όλοι βλέπουν τα
+              κενά), θέλει backend.
             </div>
           </div>
         </div>
@@ -179,13 +338,113 @@
 
     <footer class="footer">
       <div class="container footer-row">
-        <span>© <span id="y"></span> Οδοντιατρείο</span>
+        <span>© <span id="y"></span> Οδοντιατρείο Thomas Gousoulis</span>
         <span class="muted">Made with HTML/CSS • GitHub Pages</span>
       </div>
     </footer>
 
     <script>
+      // Footer year
       document.getElementById("y").textContent = new Date().getFullYear();
+
+      // Booking (demo v1): slots + localStorage "booked"
+      const slots = [
+        "09:00",
+        "09:30",
+        "10:00",
+        "10:30",
+        "11:00",
+        "11:30",
+        "12:00",
+        "12:30",
+        "17:00",
+        "17:30",
+        "18:00",
+        "18:30",
+        "19:00",
+      ];
+
+      const dateEl = document.getElementById("date");
+      const timeSelect = document.getElementById("time-select");
+      const form = document.getElementById("book-form");
+      const msg = document.getElementById("book-msg");
+
+      // set min date = today
+      const today = new Date();
+      const yyyy = today.getFullYear();
+      const mm = String(today.getMonth() + 1).padStart(2, "0");
+      const dd = String(today.getDate()).padStart(2, "0");
+      dateEl.min = `${yyyy}-${mm}-${dd}`;
+
+      function keyForDate(dateStr) {
+        return `booked_${dateStr}`;
+      }
+
+      function getBooked(dateStr) {
+        try {
+          return JSON.parse(localStorage.getItem(keyForDate(dateStr)) || "[]");
+        } catch {
+          return [];
+        }
+      }
+
+      function setBooked(dateStr, arr) {
+        localStorage.setItem(keyForDate(dateStr), JSON.stringify(arr));
+      }
+
+      function renderTimes() {
+        const dateStr = dateEl.value;
+        timeSelect.innerHTML =
+          '<option value="" disabled selected>Επιλογή ώρας</option>';
+
+        if (!dateStr) return;
+
+        const booked = new Set(getBooked(dateStr));
+        slots.forEach((t) => {
+          const opt = document.createElement("option");
+          opt.value = t;
+          opt.textContent = booked.has(t) ? `${t} (κλεισμένο)` : t;
+          opt.disabled = booked.has(t);
+          timeSelect.appendChild(opt);
+        });
+      }
+
+      dateEl.addEventListener("change", () => {
+        msg.textContent = "";
+        renderTimes();
+      });
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        msg.textContent = "";
+
+        const data = new FormData(form);
+        const dateStr = data.get("date");
+        const timeStr = data.get("time");
+
+        if (!dateStr || !timeStr) {
+          msg.textContent = "Παρακαλώ επιλέξτε ημερομηνία και ώρα.";
+          return;
+        }
+
+        const booked = getBooked(dateStr);
+        if (booked.includes(timeStr)) {
+          msg.textContent =
+            "Αυτό το slot δεν είναι διαθέσιμο. Επιλέξτε άλλη ώρα.";
+          renderTimes();
+          return;
+        }
+
+        booked.push(timeStr);
+        setBooked(dateStr, booked);
+
+        msg.textContent = `✅ Καταχωρήθηκε demo αίτημα για ${dateStr} στις ${timeStr}. (local)`;
+        form.reset();
+        renderTimes();
+      });
+
+      // initial render
+      renderTimes();
     </script>
   </body>
 </html>
