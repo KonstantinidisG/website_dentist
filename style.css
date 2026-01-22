@@ -217,12 +217,23 @@ h1 {
 }
 
 .doc-photo {
-  width: 60px;
-  height: 60px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid rgba(110, 231, 255, 0.6);
   flex-shrink: 0;
+}
+
+.hero-card-top img {
+  width: 48px !important;
+  height: 48px !important;
+  max-width: 48px !important;
+  max-height: 48px !important;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(110, 231, 255, 0.6);
+  display: block;
 }
 
 /* Sections */
