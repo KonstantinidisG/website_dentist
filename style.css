@@ -1,4 +1,4 @@
-::root {
+:root {
   --bg: #0b1220;
   --card: rgba(255, 255, 255, 0.06);
   --text: rgba(255, 255, 255, 0.92);
@@ -71,6 +71,7 @@ a {
   gap: 12px;
   min-width: 240px;
 }
+
 .brand-logo {
   width: 28px;
   height: 28px;
@@ -175,7 +176,7 @@ a {
 
 /* Hero */
 .hero {
-  padding: 16px 0 22px;
+  padding: 22px 0 26px;
 }
 .hero-grid {
   display: grid;
@@ -200,8 +201,8 @@ a {
 }
 .hero-lead {
   margin: 0 0 12px;
-  line-height: 1.65;
-  font-size: 15px;
+  line-height: 1.75;
+  font-size: 16px;
 }
 
 /* Hero card w/ full photo */
@@ -211,21 +212,21 @@ a {
   border-radius: 22px;
   overflow: hidden;
   box-shadow: var(--shadow);
-  height: 260px; /* μικρότερο πλαίσιο */
-  max-height: 260px;
+  height: 100px;
 }
 
 .hero-photo-wrap {
   position: relative;
   width: 100%;
-  height: 100%; /* ΟΧΙ fixed px */
+  height: 100%;
 }
 
 .hero-photo {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* γεμίζει χωρίς να ξεχειλώνει */
+  object-fit: cover;
   display: block;
+  filter: saturate(1.05) contrast(1.05);
 }
 
 .hero-photo-wrap::after {
@@ -242,12 +243,12 @@ a {
 
 .hero-photo-overlay {
   position: absolute;
-  left: 12px;
-  bottom: 12px;
+  left: 14px;
+  bottom: 14px;
   right: auto;
 
-  width: min(360px, calc(100% - 24px));
-  padding: 10px 10px;
+  width: min(420px, calc(100% - 28px));
+  padding: 12px 12px;
 
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.16);
