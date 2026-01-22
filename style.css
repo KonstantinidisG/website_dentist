@@ -175,7 +175,7 @@ a {
 
 /* Hero */
 .hero {
-  padding: 22px 0 26px;
+  padding: 16px 0 22px;
 }
 .hero-grid {
   display: grid;
@@ -200,8 +200,8 @@ a {
 }
 .hero-lead {
   margin: 0 0 12px;
-  line-height: 1.75;
-  font-size: 16px;
+  line-height: 1.65;
+  font-size: 15px;
 }
 
 /* Hero card w/ full photo */
@@ -211,7 +211,8 @@ a {
   border-radius: 22px;
   overflow: hidden;
   box-shadow: var(--shadow);
-  height: 100%; /* ΠΑΙΡΝΕΙ ΤΟ ΥΨΟΣ ΤΟΥ ΑΡΙΣΤΕΡΟΥ */
+  height: 260px; /* μικρότερο πλαίσιο */
+  max-height: 260px;
 }
 
 .hero-photo-wrap {
@@ -241,12 +242,12 @@ a {
 
 .hero-photo-overlay {
   position: absolute;
-  left: 14px;
-  bottom: 14px;
+  left: 12px;
+  bottom: 12px;
   right: auto;
 
-  width: min(420px, calc(100% - 28px));
-  padding: 12px 12px;
+  width: min(360px, calc(100% - 24px));
+  padding: 10px 10px;
 
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.16);
