@@ -189,7 +189,7 @@ a {
   align-items: stretch;
 
   /* κοινό ύψος για ΑΡΙΣΤΕΡΑ + ΔΕΞΙΑ (μικραίνει και τη φωτό) */
-  height: clamp(320px, 52vh, 650px);
+  height: clamp(320px, 52vh, 750px);
 }
 
 .hero-left,
