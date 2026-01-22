@@ -184,10 +184,19 @@ a {
 }
 .hero-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* ίσα divs */
+  grid-template-columns: 1fr 1fr;
   gap: 18px;
-  align-items: stretch; /* ίδιο ύψος */
+  align-items: stretch;
+
+  /* κοινό ύψος για ΑΡΙΣΤΕΡΑ + ΔΕΞΙΑ (μικραίνει και τη φωτό) */
+  height: clamp(320px, 52vh, 460px);
 }
+
+.hero-left,
+.hero-card {
+  height: 100%;
+}
+
 .badge {
   display: inline-flex;
   gap: 8px;
@@ -222,7 +231,7 @@ a {
 .hero-photo-wrap {
   position: relative;
   width: 100%;
-  min-height: 100%; /* 🔑 δουλεύει καλύτερα από height:100% εδώ */
+  height: 100%;
 }
 
 .hero-photo {
@@ -266,7 +275,7 @@ a {
 }
 
 .hero-left {
-  align-self: stretch;
+  overflow: hidden;
 }
 
 .doc-name {
