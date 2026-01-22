@@ -216,7 +216,8 @@ a {
   border-radius: 22px;
   overflow: hidden;
   box-shadow: var(--shadow);
-  height: 100px;
+  height: auto;
+  min-height: 100%;
 }
 
 .hero-photo-wrap {
