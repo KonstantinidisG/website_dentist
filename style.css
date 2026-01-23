@@ -397,8 +397,8 @@ textarea:focus {
   .menu {
     display: none;
   }
-  .hero-grid {
-    grid-template-columns: 1fr;
+  .hero {
+    display: none;
   }
   .about-grid {
     grid-template-columns: 1fr;
@@ -411,17 +411,6 @@ textarea:focus {
   }
   .contact-2 {
     grid-template-columns: 1fr !important;
-  }
-
-  .hero-card {
-    display: none !important;
-  }
-
-  .hero-title {
-    font-size: 28px;
-  }
-  .hero-lead {
-    font-size: 15px;
   }
 }
 
