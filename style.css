@@ -186,7 +186,7 @@ a {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 18px;
-  align-items: stretch;
+  align-items: start;
 }
 
 .hero-left,
@@ -222,7 +222,10 @@ a {
   border-radius: 22px;
   overflow: hidden;
   box-shadow: var(--shadow);
-  height: 500px;
+  /* ΣΤΑΘΕΡΗ ΑΝΑΛΟΓΙΑ: δεν “εξαφανίζεται” σε κινητό */
+  aspect-ratio: 4 / 5; /* portrait για γιατρό */
+  max-height: 520px; /* να μη γίνεται τεράστια σε desktop */
+  width: 100%;
 }
 
 .hero-photo-wrap {
@@ -412,14 +415,20 @@ textarea:focus {
 }
 
 @media (max-width: 980px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
   .hero-card {
-    height: 380px; /* σταθερό και στο tablet */
+    /* στο κινητό/τάμπλετ: πιο “φαρδιά” κάρτα για να μη φαίνεται μικρή */
+    aspect-ratio: 16 / 9;
+    max-height: 360px;
   }
 }
 
 @media (max-width: 520px) {
   .hero-card {
-    height: 320px; /* σταθερό και στο κινητό */
+    max-height: 300px; /* σταθερό και ευανάγνωστο */
   }
 }
 
