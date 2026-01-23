@@ -412,11 +412,11 @@ textarea:focus {
   .contact-2 {
     grid-template-columns: 1fr !important;
   }
+
   .hero-card {
     display: none !important;
   }
-}
-@media (max-width: 980px) {
+
   .hero-title {
     font-size: 28px;
   }
