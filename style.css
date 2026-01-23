@@ -395,7 +395,7 @@ textarea:focus {
 /* Responsive */
 @media (max-width: 980px) {
   .menu {
-    display: none;
+    display: list-item;
   }
   .hero {
     display: none;
@@ -411,6 +411,10 @@ textarea:focus {
   }
   .contact-2 {
     grid-template-columns: 1fr !important;
+  }
+
+  #about {
+    display: none;
   }
 }
 
