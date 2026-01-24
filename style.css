@@ -347,6 +347,24 @@ a {
   align-items: start;
 }
 
+.iconbox-sterile {
+  border-color: rgba(167, 139, 250, 0.28);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.about-grid .card {
+  transition:
+    transform 160ms ease,
+    background 160ms ease,
+    border-color 160ms ease;
+}
+
+.about-grid .card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(110, 231, 255, 0.22);
+  background: rgba(255, 255, 255, 0.055);
+}
+
 /* Contact / Booking */
 .contact-card {
   border: 1px solid var(--line);
@@ -354,6 +372,47 @@ a {
   border-radius: 18px;
   padding: 18px;
 }
+
+.contact-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.map iframe {
+  width: 100%;
+  height: 360px;
+  border: 0;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  filter: saturate(1.1) contrast(1.05);
+}
+
+.map {
+  position: relative;
+}
+
+.map::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 20px;
+  background:
+    radial-gradient(
+      600px 200px at 30% 0%,
+      rgba(110, 231, 255, 0.18),
+      transparent 60%
+    ),
+    radial-gradient(
+      600px 200px at 70% 0%,
+      rgba(167, 139, 250, 0.18),
+      transparent 60%
+    );
+  z-index: -1;
+}
+
 .row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -452,6 +511,19 @@ textarea:focus {
   #about {
     display: none;
   }
+
+  .brand {
+    min-width: 0;
+  }
+
+  .nav {
+    gap: 10px;
+  }
+
+  /* το call δεξιά */
+  .nav-actions {
+    margin-left: auto;
+  }
 }
 
 /* iPhone Pro Max (and small screens) mode */
@@ -515,6 +587,7 @@ textarea:focus {
     background: linear-gradient(135deg, var(--accent), var(--accent2));
     color: #07101f;
     border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 12px 30px rgba(110, 231, 255, 0.14);
   }
 
   /* να μη σκεπάζει το footer */
