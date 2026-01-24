@@ -382,6 +382,36 @@ textarea:focus {
   border-color: rgba(110, 231, 255, 0.45);
 }
 
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+  color: var(--muted);
+}
+
+.checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.7;
+}
+
+.tick {
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 22px;
+  margin-top: 2px;
+  font-weight: 900;
+  color: #07101f;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
 /* Footer */
 .footer {
   border-top: 1px solid var(--line);
@@ -453,7 +483,7 @@ textarea:focus {
     z-index: 9999;
 
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 8px;
 
     padding: 10px;
