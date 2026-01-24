@@ -327,9 +327,9 @@ a {
   border-radius: 14px;
   display: grid;
   place-items: center;
-  color: white;
-  border: 1px solid var(--line);
-  background: linear-gradient(135deg, var(--b1), var(--b2));
+
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.04);
   box-shadow: 0 4px 12px rgba(14, 165, 233, 0.25);
   font-size: 20px;
 }
@@ -546,9 +546,11 @@ i[data-lucide] {
 
 /* tick icon */
 .tick i[data-lucide] {
-  width: 14px;
-  height: 14px;
-  color: #07101f;
+  width: 20px;
+  height: 20px;
+  stroke-width: 2;
+  color: var(--text);
+  opacity: 0.92;
 }
 
 /* iconbox (about) */
