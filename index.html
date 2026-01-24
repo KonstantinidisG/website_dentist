@@ -6,24 +6,23 @@
 
     <!-- Για GitHub Pages (δουλεύει σωστά με / και χωρίς /) -->
     <base href="./" />
-
+    <script src="https://unpkg.com/lucide@latest"></script>
     <title>Οδοντιατρείο Thomas Gousoulis</title>
-    <link rel="stylesheet" href="style.css?v=25" />
+    <link rel="stylesheet" href="style.css?v=26" />
   </head>
 
   <!-- Mobile floating actions (small screens) -->
   <div class="mobile-actions" aria-label="Γρήγορες ενέργειες">
-    <a class="mbtn primary" href="tel:+306909591450" aria-label="Κάλεσε τώρα"
-      >📞</a
-    >
+    <a class="mbtn primary" aria-label="Κάλεσε">
+      <i data-lucide="phone"></i>
+    </a>
     <a
       class="mbtn primary"
       href="https://www.google.com/maps/search/?api=1&query=Καραολή%20%26%20Δημητρίου%2047,%20Νεάπολη,%20Λάρισα"
-      target="_blank"
-      rel="noreferrer"
       aria-label="Οδηγίες"
-      >🧭</a
     >
+      <i data-lucide="map-pin"></i>
+    </a>
   </div>
   <button class="to-top" id="toTop" aria-label="Πάνω">⬆️</button>
 
@@ -190,16 +189,22 @@
 
             <ul class="checklist" style="margin-top: 10px">
               <li>
-                <span class="tick" aria-hidden="true">✓</span> 10+ χρόνια
-                εμπειρίας
+                <span class="tick" aria-hidden="true"
+                  ><i data-lucide="check"></i
+                ></span>
+                10+ χρόνια εμπειρίας
               </li>
               <li>
-                <span class="tick" aria-hidden="true">✓</span> Ψηφιακή
-                ακτινογραφία χαμηλής ακτινοβολίας
+                <span class="tick" aria-hidden="true"
+                  ><i data-lucide="check"></i
+                ></span>
+                Ψηφιακή ακτινογραφία χαμηλής ακτινοβολίας
               </li>
               <li>
-                <span class="tick" aria-hidden="true">✓</span> Ευέλικτα ωράρια &
-                επείγοντα
+                <span class="tick" aria-hidden="true"
+                  ><i data-lucide="check"></i
+                ></span>
+                Ευέλικτα ωράρια & επείγοντα
               </li>
             </ul>
           </div>
@@ -207,7 +212,9 @@
           <div>
             <div class="card">
               <div style="display: flex; gap: 10px; align-items: flex-start">
-                <div class="iconbox iconbox-sterile" aria-hidden="true">🧼</div>
+                <div class="iconbox iconbox-sterile" aria-hidden="true">
+                  <i data-lucide="shield-check"></i>
+                </div>
                 <div>
                   <p><strong>Εγγύηση υγιεινής & ασφάλειας</strong></p>
                   <p class="muted" style="margin-top: 8px">
@@ -268,10 +275,11 @@
                 loading="lazy"
               ></iframe>
             </div>
-            <div class="open-status" id="openStatus">
-              <span class="dot"></span>
-              <span class="status-text">Έλεγχος ωραρίου…</span>
+            <div class="open-status open" id="openStatus">
+              <i data-lucide="clock"></i>
+              <span class="status-text">Ανοιχτά τώρα</span>
             </div>
+
             <div class="chips" style="margin-top: 12px">
               <a class="chip" href="tel:+306909591450" aria-label="Τηλέφωνο"
                 >📞 +30 690 959 1450</a
@@ -416,6 +424,8 @@
           textEl.textContent = "Κλειστά τώρα";
         }
       })();
+
+      lucide.createIcons();
     </script>
     <!--<script>
       // Footer year

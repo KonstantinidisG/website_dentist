@@ -531,6 +531,32 @@ a.chip:hover {
   background: #ef4444;
 }
 
+/* Lucide icons base */
+i[data-lucide] {
+  width: 18px;
+  height: 18px;
+  stroke-width: 2.2;
+}
+
+/* icon μέσα σε button */
+.mbtn i[data-lucide] {
+  width: 20px;
+  height: 20px;
+}
+
+/* tick icon */
+.tick i[data-lucide] {
+  width: 14px;
+  height: 14px;
+  color: #07101f;
+}
+
+/* iconbox (about) */
+.iconbox i[data-lucide] {
+  width: 20px;
+  height: 20px;
+}
+
 /* Footer */
 .footer {
   border-top: 1px solid var(--line);
