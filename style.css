@@ -833,12 +833,13 @@ i[data-lucide] {
   }
 }
 
-/* Premium smile (closer to your sketch) */
+/* PREMIUM SIGNATURE SMILE (tapered look) */
 .smile-svg {
-  width: min(520px, 78vw);
+  width: min(320px, 62vw); /* μικρότερο = πιο premium */
   height: auto;
   margin: 10px auto 0;
-  color: rgba(255, 255, 255, 0.92);
+  color: rgba(0, 0, 0, 0.55); /* γραφίτης, όχι άσπρο */
+  opacity: 0.95;
 }
 
 /* draw animation base */
@@ -847,10 +848,9 @@ i[data-lucide] {
 
   stroke-linecap: round;
   stroke-linejoin: round;
-
-  stroke-dasharray: 900;
-  stroke-dashoffset: 900;
-  animation: drawSmile 900ms ease forwards;
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  animation: drawSmile 820ms ease forwards;
 }
 
 @keyframes drawSmile {
@@ -859,36 +859,43 @@ i[data-lucide] {
   }
 }
 
-/* cheeks */
+/* cheeks – διακριτικά */
 .smile-cheek {
   stroke-width: 10;
-  opacity: 0.85;
-  animation-duration: 520ms;
+  opacity: 0.35;
+  animation-duration: 420ms;
 }
 .smile-cheek.c1 {
-  animation-delay: 90ms;
+  animation-delay: 80ms;
 }
 .smile-cheek.c2 {
-  animation-delay: 220ms;
-}
-
-/* main curve (thick, premium) */
-.smile-main {
-  stroke-width: 16; /* εδώ είναι το “πάχος” που έλειπε */
-  opacity: 0.95;
-  animation-duration: 900ms;
   animation-delay: 180ms;
 }
 
-/* highlight (thin, subtle) */
-.smile-highlight {
-  stroke-width: 6;
-  opacity: 0.35;
-  animation-duration: 600ms;
-  animation-delay: 720ms;
+/* thin left part */
+.smile-stroke.thin {
+  stroke-width: 10; /* λεπτότερο άκρο */
+  opacity: 0.9;
+  animation-delay: 160ms;
+  animation-duration: 520ms;
+}
+/* main thick part */
+.smile-stroke.main {
+  stroke-width: 18; /* κύριο πάχος */
+  opacity: 0.95;
+  animation-delay: 260ms;
+  animation-duration: 840ms;
 }
 
-/* reduced motion */
+/* subtle highlight */
+.smile-highlight {
+  stroke-width: 6;
+  opacity: 0.18;
+  animation-delay: 720ms;
+  animation-duration: 520ms;
+}
+
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .smile-svg path {
     animation: none !important;
