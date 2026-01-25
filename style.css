@@ -835,40 +835,48 @@ i[data-lucide] {
 
 /* SVG smile draw */
 .smile-svg {
-  width: min(280px, 70vw);
+  width: min(300px, 74vw);
   height: auto;
-  color: rgba(255, 255, 255, 0.85);
-  filter: drop-shadow(0 10px 30px rgba(110, 231, 255, 0.1));
+  color: rgba(255, 255, 255, 0.84);
+  filter: drop-shadow(0 10px 28px rgba(110, 231, 255, 0.1));
 }
 
-.smile-path {
+.smile-stroke {
   stroke: currentColor;
-  stroke-width: 6;
+  stroke-width: 3.6; /* λεπτό/premium */
   stroke-linecap: round;
+  stroke-linejoin: round;
 
-  /* draw animation setup */
-  stroke-dasharray: 500;
-  stroke-dashoffset: 500;
-  animation: drawSmile 900ms ease forwards;
-  animation-delay: 120ms;
+  stroke-dasharray: 140;
+  stroke-dashoffset: 140;
+  animation: drawLine 700ms ease forwards;
 }
 
-@keyframes drawSmile {
+/* stagger (ζωγραφίζει πρώτα αριστερά, μετά καμπύλη, μετά δεξιά) */
+.smile-stroke.s1 {
+  animation-delay: 140ms;
+}
+.smile-stroke.s2 {
+  animation-delay: 230ms;
+  stroke-dasharray: 520;
+  stroke-dashoffset: 520;
+  animation-duration: 900ms;
+}
+.smile-stroke.s3 {
+  animation-delay: 520ms;
+}
+
+@keyframes drawLine {
   to {
     stroke-dashoffset: 0;
   }
 }
 
-.smile-dot {
-  fill: currentColor;
-  opacity: 0;
-  animation: dotsIn 400ms ease forwards;
-  animation-delay: 700ms;
-}
-
-@keyframes dotsIn {
-  to {
-    opacity: 1;
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .smile-stroke {
+    animation: none !important;
+    stroke-dashoffset: 0 !important;
   }
 }
 
