@@ -26,14 +26,78 @@
 
     <main class="section">
       <div class="container">
-        <h3 class="section-title" style="text-align: left">
-          Πολιτική Απορρήτου
-        </h3>
+        <h3 class="section-title" style="text-align: left">FAQ</h3>
         <p class="muted" style="margin-top: 10px; line-height: 1.8">
-          (Placeholder) Εδώ μπαίνει η πολιτική απορρήτου. Αν θέλεις, θα σου
-          γράψω πλήρες κείμενο προσαρμοσμένο για ιατρείο και φόρμες
-          επικοινωνίας.
+          Απαντήσεις σε συχνές ερωτήσεις. Για οτιδήποτε επιπλέον, καλέστε μας.
         </p>
+        <div class="faq" style="margin-top: 16px">
+          <button class="faq-item" aria-expanded="false">
+            <span class="faq-q">Πώς κλείνω ραντεβού;</span>
+            <i data-lucide="plus" class="faq-icon"></i>
+          </button>
+          <div class="faq-a">
+            <p class="muted">
+              Τα ραντεβού κλείνονται τηλεφωνικά στο
+              <a href="tel:+306909591450">+30 690 959 1450</a>. Θα σας
+              προτείνουμε την πρώτη διαθέσιμη ώρα που σας εξυπηρετεί.
+            </p>
+          </div>
+
+          <button class="faq-item" aria-expanded="false">
+            <span class="faq-q">Τι να περιμένω στην πρώτη επίσκεψη;</span>
+            <i data-lucide="plus" class="faq-icon"></i>
+          </button>
+          <div class="faq-a">
+            <p class="muted">
+              Γίνεται κλινικός έλεγχος, εκτίμηση αναγκών και συζήτηση για
+              πιθανές επιλογές θεραπείας, με σαφή ενημέρωση για τα βήματα.
+            </p>
+          </div>
+
+          <button class="faq-item" aria-expanded="false">
+            <span class="faq-q">Κάνετε επείγοντα περιστατικά;</span>
+            <i data-lucide="plus" class="faq-icon"></i>
+          </button>
+          <div class="faq-a">
+            <p class="muted">
+              Αν υπάρχει πόνος ή επείγον, καλέστε μας. Θα προσπαθήσουμε να σας
+              εξυπηρετήσουμε όσο πιο άμεσα γίνεται, ανάλογα με τη διαθεσιμότητα.
+            </p>
+          </div>
+
+          <button class="faq-item" aria-expanded="false">
+            <span class="faq-q">Πόσο διαρκεί ένας καθαρισμός;</span>
+            <i data-lucide="plus" class="faq-icon"></i>
+          </button>
+          <div class="faq-a">
+            <p class="muted">
+              Συνήθως 30–60 λεπτά, ανάλογα με το περιστατικό. Θα σας
+              ενημερώσουμε εκ των προτέρων.
+            </p>
+          </div>
+
+          <button class="faq-item" aria-expanded="false">
+            <span class="faq-q">Δέχεστε κάρτες/ηλεκτρονική πληρωμή;</span>
+            <i data-lucide="plus" class="faq-icon"></i>
+          </button>
+          <div class="faq-a">
+            <p class="muted">
+              Ενημερωθείτε τηλεφωνικά για διαθέσιμους τρόπους πληρωμής και τυχόν
+              δόσεις/πλάνο όπου εφαρμόζεται.
+            </p>
+          </div>
+
+          <button class="faq-item" aria-expanded="false">
+            <span class="faq-q">Πού βρίσκεστε και πώς έρχομαι;</span>
+            <i data-lucide="plus" class="faq-icon"></i>
+          </button>
+          <div class="faq-a">
+            <p class="muted">
+              Θα βρείτε χάρτη στη σελίδα “Επικοινωνία” και κουμπί “Οδηγίες”.
+              Μπορείτε επίσης να μας καλέσετε για διευκρινίσεις.
+            </p>
+          </div>
+        </div>
         <a
           class="btn secondary"
           href="index.html"
@@ -45,6 +109,32 @@
 
     <script>
       lucide.createIcons();
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      lucide.createIcons();
+
+      const items = document.querySelectorAll(".faq-item");
+      items.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const expanded = btn.getAttribute("aria-expanded") === "true";
+          const answer = btn.nextElementSibling;
+
+          // close all (optional - για πιο καθαρή εμπειρία)
+          items.forEach((b) => {
+            b.setAttribute("aria-expanded", "false");
+            const a = b.nextElementSibling;
+            if (a) a.style.display = "none";
+          });
+
+          if (!expanded) {
+            btn.setAttribute("aria-expanded", "true");
+            answer.style.display = "block";
+          }
+
+          // refresh icons (+ stays but ok). Αν θες plus/minus, πες μου να το κάνω “κανονικά”.
+        });
+      });
     </script>
   </body>
 </html>

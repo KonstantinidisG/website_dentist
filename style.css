@@ -316,6 +316,20 @@ a {
   gap: 8px;
   min-height: 160px;
 }
+
+.card {
+  transition:
+    transform 160ms ease,
+    background 160ms ease,
+    border-color 160ms ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(110, 231, 255, 0.22);
+  background: rgba(255, 255, 255, 0.055);
+}
+
 .card p {
   margin: 0;
   color: var(--muted);
@@ -352,7 +366,7 @@ a {
   background: rgba(255, 255, 255, 0.06);
 }
 
-.about-grid .card {
+/*.about-grid .card {
   transition:
     transform 160ms ease,
     background 160ms ease,
@@ -363,7 +377,7 @@ a {
   transform: translateY(-2px);
   border-color: rgba(110, 231, 255, 0.22);
   background: rgba(255, 255, 255, 0.055);
-}
+}*/
 
 /* Contact / Booking */
 .contact-card {
@@ -725,6 +739,58 @@ i[data-lucide] {
   pointer-events: auto;
   transform: translateY(0);
 }
+
+/* FAQ accordion */
+.faq {
+  display: grid;
+  gap: 10px;
+}
+
+.faq-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+
+  padding: 14px 14px;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.04);
+
+  cursor: pointer;
+  text-align: left;
+  color: var(--text);
+  font-weight: 800;
+}
+
+.faq-item:hover {
+  border-color: rgba(110, 231, 255, 0.22);
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.faq-q {
+  font-size: 14px;
+}
+
+.faq-icon {
+  width: 18px;
+  height: 18px;
+  opacity: 0.9;
+}
+
+.faq-a {
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  margin-left: 10px;
+  padding-left: 12px;
+  display: none;
+}
+
+.faq-a p {
+  margin: 10px 0 0;
+  line-height: 1.8;
+}
+
 .mobile-actions {
   display: none;
 }
