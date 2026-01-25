@@ -837,7 +837,7 @@ i[data-lucide] {
 .smile-svg {
   width: min(360px, 70vw);
   height: auto;
-  margin: 4px auto 0;
+  margin: 2px auto 0;
   display: block;
   color: rgba(255, 255, 255, 0.82); /* λευκό αλλά premium (όχι κατάλευκο) */
   filter: drop-shadow(0 6px 14px rgba(255, 255, 255, 0.12));
@@ -854,12 +854,12 @@ i[data-lucide] {
 }
 
 .smile-main {
-  stroke-width: 5.5; /* πιο λεπτό */
+  stroke-width: 5; /* πιο λεπτό */
   animation-delay: 120ms;
 }
 
 .smile-ear {
-  stroke-width: 5; /* ελάχιστα λεπτότερα */
+  stroke-width: 4.5; /* ελάχιστα λεπτότερα */
   opacity: 0.92;
 }
 
