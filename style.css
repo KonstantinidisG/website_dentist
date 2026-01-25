@@ -839,9 +839,7 @@ i[data-lucide] {
   height: auto;
   margin: 10px auto 0;
   display: block;
-
-  /* άλλαξε αυτό αν το θες πιο σκούρο/πιο ανοιχτό */
-  color: rgba(0, 0, 0, 0.55);
+  color: rgba(255, 255, 255, 0.82); /* λευκό αλλά premium (όχι κατάλευκο) */
 }
 
 .smile-stroke {
@@ -849,29 +847,27 @@ i[data-lucide] {
 
   stroke-linecap: round;
   stroke-linejoin: round;
-
-  /* draw animation using pathLength=100 */
   stroke-dasharray: 100;
   stroke-dashoffset: 100;
-  animation: smileDraw 900ms ease forwards;
+  animation: smileDraw 850ms ease forwards;
 }
 
 .smile-main {
-  stroke-width: 10; /* κύριο πάχος */
-  animation-delay: 140ms;
+  stroke-width: 6; /* πιο λεπτό */
+  animation-delay: 120ms;
 }
 
-.smile-mini {
-  stroke-width: 8; /* λίγο λεπτότερα τα άκρα */
-  opacity: 0.9;
+.smile-ear {
+  stroke-width: 5; /* ελάχιστα λεπτότερα */
+  opacity: 0.92;
 }
 
-.smile-mini.l {
+.smile-ear.l {
   animation-delay: 0ms;
   animation-duration: 520ms;
 }
-.smile-mini.r {
-  animation-delay: 320ms;
+.smile-ear.r {
+  animation-delay: 280ms;
   animation-duration: 520ms;
 }
 
@@ -881,7 +877,6 @@ i[data-lucide] {
   }
 }
 
-/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .smile-stroke {
     animation: none !important;
