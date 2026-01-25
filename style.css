@@ -795,6 +795,95 @@ i[data-lucide] {
   display: none;
 }
 
+/* === Quote animations: fade-in + SVG draw === */
+.motto-box {
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle background shimmer (optional, very minimal) */
+.motto-box::after {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(
+    600px 220px at 50% 20%,
+    rgba(110, 231, 255, 0.1),
+    transparent 60%
+  );
+  transform: rotate(8deg);
+  pointer-events: none;
+}
+
+/* Fade-in typography */
+.animate-fade {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: fadeUp 700ms ease forwards;
+}
+
+.animate-fade.delay-2 {
+  animation-delay: 180ms;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* SVG smile draw */
+.smile-svg {
+  width: min(280px, 70vw);
+  height: auto;
+  color: rgba(255, 255, 255, 0.85);
+  filter: drop-shadow(0 10px 30px rgba(110, 231, 255, 0.1));
+}
+
+.smile-path {
+  stroke: currentColor;
+  stroke-width: 6;
+  stroke-linecap: round;
+
+  /* draw animation setup */
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: drawSmile 900ms ease forwards;
+  animation-delay: 120ms;
+}
+
+@keyframes drawSmile {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.smile-dot {
+  fill: currentColor;
+  opacity: 0;
+  animation: dotsIn 400ms ease forwards;
+  animation-delay: 700ms;
+}
+
+@keyframes dotsIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade,
+  .smile-path,
+  .smile-dot {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    stroke-dashoffset: 0 !important;
+  }
+}
+
 /* Responsive */
 @media (max-width: 980px) {
   .menu {

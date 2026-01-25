@@ -8,7 +8,7 @@
     <base href="./" />
     <script src="https://unpkg.com/lucide@latest"></script>
     <title>Οδοντιατρείο Thomas Gousoulis</title>
-    <link rel="stylesheet" href="style.css?v=31" />
+    <link rel="stylesheet" href="style.css?v=32" />
   </head>
 
   <!-- Mobile floating actions (small screens) -->
@@ -57,32 +57,30 @@
       <!-- QUOTE / MOTTO SECTION -->
       <section class="motto">
         <div class="container motto-box">
-          <h1 class="motto-title">
-            ¨Ένα χαμόγελο μπορεί να σου αλλάξει τη μέρα¨
+          <h1 class="motto-title animate-fade">
+            Ένα χαμόγελο μπορεί να σου αλλάξει τη μέρα
           </h1>
 
-          <!-- simple sketch smile (SVG) -->
           <div class="motto-smile" aria-hidden="true">
             <svg
+              class="smile-svg"
               viewBox="0 0 240 60"
-              width="240"
-              height="60"
               role="img"
               aria-label=""
             >
               <path
-                d="M15 15 C 55 55, 185 55, 225 15"
+                class="smile-path"
+                d="M15 18 C 55 52, 185 52, 225 18"
                 fill="none"
-                stroke="currentColor"
-                stroke-width="6"
-                stroke-linecap="round"
               />
+              <!-- μικρά “caps” (προαιρετικό, minimal) -->
+              <circle class="smile-dot" cx="15" cy="18" r="3" />
+              <circle class="smile-dot" cx="225" cy="18" r="3" />
             </svg>
           </div>
 
-          <p class="motto-sub muted">
-            Πρόληψη • Άνεση • Σύγχρονη οδοντιατρική — με ξεκάθαρη ενημέρωση και
-            άμεση εξυπηρέτηση.
+          <p class="motto-sub muted animate-fade delay-2">
+            Πρόληψη • Άνεση • Σύγχρονη οδοντιατρική — με ξεκάθαρη ενημέρωση.
           </p>
         </div>
       </section>
