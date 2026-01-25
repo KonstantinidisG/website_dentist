@@ -833,71 +833,57 @@ i[data-lucide] {
   }
 }
 
-/* PREMIUM SIGNATURE SMILE (tapered look) */
+/* Simple premium smile (like your example) */
 .smile-svg {
-  width: min(320px, 62vw); /* μικρότερο = πιο premium */
+  width: min(360px, 70vw);
   height: auto;
   margin: 10px auto 0;
-  color: rgba(0, 0, 0, 0.55); /* γραφίτης, όχι άσπρο */
-  opacity: 0.95;
+  display: block;
+
+  /* άλλαξε αυτό αν το θες πιο σκούρο/πιο ανοιχτό */
+  color: rgba(0, 0, 0, 0.55);
 }
 
-/* draw animation base */
-.smile-svg path {
+.smile-stroke {
   stroke: currentColor;
 
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-dasharray: 600;
-  stroke-dashoffset: 600;
-  animation: drawSmile 820ms ease forwards;
+
+  /* draw animation using pathLength=100 */
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: smileDraw 900ms ease forwards;
 }
 
-@keyframes drawSmile {
+.smile-main {
+  stroke-width: 10; /* κύριο πάχος */
+  animation-delay: 140ms;
+}
+
+.smile-mini {
+  stroke-width: 8; /* λίγο λεπτότερα τα άκρα */
+  opacity: 0.9;
+}
+
+.smile-mini.l {
+  animation-delay: 0ms;
+  animation-duration: 520ms;
+}
+.smile-mini.r {
+  animation-delay: 320ms;
+  animation-duration: 520ms;
+}
+
+@keyframes smileDraw {
   to {
     stroke-dashoffset: 0;
   }
 }
 
-/* cheeks – διακριτικά */
-.smile-cheek {
-  stroke-width: 10;
-  opacity: 0.35;
-  animation-duration: 420ms;
-}
-.smile-cheek.c1 {
-  animation-delay: 80ms;
-}
-.smile-cheek.c2 {
-  animation-delay: 180ms;
-}
-
-/* thin left part */
-.smile-stroke.thin {
-  stroke-width: 10; /* λεπτότερο άκρο */
-  opacity: 0.9;
-  animation-delay: 160ms;
-  animation-duration: 520ms;
-}
-/* main thick part */
-.smile-stroke.main {
-  stroke-width: 18; /* κύριο πάχος */
-  opacity: 0.95;
-  animation-delay: 260ms;
-  animation-duration: 840ms;
-}
-
-/* subtle highlight */
-.smile-highlight {
-  stroke-width: 6;
-  opacity: 0.18;
-  animation-delay: 720ms;
-  animation-duration: 520ms;
-}
-
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .smile-svg path {
+  .smile-stroke {
     animation: none !important;
     stroke-dashoffset: 0 !important;
   }
