@@ -8,7 +8,7 @@
     <base href="./" />
     <script src="https://unpkg.com/lucide@latest"></script>
     <title>Οδοντιατρείο Thomas Gousoulis</title>
-    <link rel="stylesheet" href="style.css?v=29" />
+    <link rel="stylesheet" href="style.css?v=30" />
   </head>
 
   <!-- Mobile floating actions (small screens) -->
@@ -381,9 +381,68 @@
     </main>
 
     <footer class="footer">
-      <div class="container footer-row">
-        <span>© <span id="y"></span> Οδοντιατρείο Θωμάς Γουσούλη;</span>
-        <span class="muted">Made with HTML/CSS • GitHub Pages</span>
+      <div class="container footer-grid">
+        <!-- Column 1 -->
+        <div class="footer-col">
+          <div class="footer-brand">Οδοντιατρείο Thomas Gousoulis</div>
+          <div class="footer-muted">Χειρουργός Οδοντίατρος • Λάρισα</div>
+
+          <div class="social" aria-label="Social media">
+            <a
+              class="social-link"
+              href="#"
+              aria-label="Facebook"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <i data-lucide="facebook"></i>
+            </a>
+            <a
+              class="social-link"
+              href="#"
+              aria-label="Instagram"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <i data-lucide="instagram"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="footer-col">
+          <div class="footer-title">Χρήσιμα</div>
+          <nav class="footer-links" aria-label="Footer links">
+            <a href="privacy.html">Πολιτική Απορρήτου</a>
+            <a href="cookies.html">Cookies</a>
+            <a href="faq.html">FAQ</a>
+          </nav>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="footer-col">
+          <div class="footer-title">Ωράριο</div>
+          <div class="hours">
+            <div class="hours-row">
+              <span>Δευ - Τετ - Παρ</span><span>10:00 - 18:00</span>
+            </div>
+            <div class="hours-row">
+              <span>Τρι - Πεμ</span><span>13:00 - 21:00</span>
+            </div>
+            <div class="hours-row">
+              <span>Σαβ - Κυρ</span><span class="muted">Κλειστά</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <div class="footer-muted">
+          © <span id="y"></span> Thomas Gousoulis. All rights reserved.
+        </div>
+        <a class="footer-top" href="#top" aria-label="Πάνω">
+          <i data-lucide="arrow-up"></i>
+        </a>
       </div>
     </footer>
 
