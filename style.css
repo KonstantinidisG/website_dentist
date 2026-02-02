@@ -872,6 +872,13 @@ i[data-lucide] {
   animation-duration: 520ms;
 }
 
+.footer-disclaimer {
+  margin-top: 6px;
+  font-size: 12px;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
 @keyframes smileDraw {
   to {
     stroke-dashoffset: 0;
