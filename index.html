@@ -16,7 +16,7 @@
       rel="canonical"
       href="https://konstantinidisg.github.io/website_dentist/"
     />
-    <link rel="stylesheet" href="style.css?v=42" />
+    <link rel="stylesheet" href="style.css?v=43" />
   </head>
 
   <!-- Mobile floating actions (small screens) -->
@@ -37,8 +37,31 @@
   </button>
 
   <body>
+    <section class="intro" id="top" aria-label="Εισαγωγή">
+      <div class="intro-inner">
+        <img
+          class="intro-logo intro-anim a1"
+          src="assets/images/logo.png"
+          alt="Λογότυπο οδοντιατρείου"
+        />
+        <div class="intro-name intro-anim a2">
+          Οδοντιατρείο Thomas Gousoulis
+        </div>
+        <div class="intro-quote intro-anim a3">
+          Ένα χαμόγελο μπορεί να σου αλλάξει τη μέρα
+        </div>
+      </div>
+
+      <a
+        class="scroll-indicator"
+        href="#services"
+        aria-label="Κύλιση προς τα κάτω"
+      >
+        <span class="scroll-dot"></span>
+      </a>
+    </section>
     <!-- HEADER -->
-    <header class="header">
+    <header class="header navbar" id="navbar">
       <div class="container nav">
         <a class="brand" href="#top" aria-label="Αρχική">
           <img class="brand-logo" src="assets/images/logo.png" alt="Λογότυπο" />
@@ -333,65 +356,6 @@
               >
             </div>
           </div>
-
-          <!--<div class="contact-card" id="booking">
-            <h4 style="margin: 0 0 8px 0">Κλείσε ραντεβού</h4>
-            <form id="book-form">
-              <div class="row">
-                <label
-                  >Ημερομηνία
-                  <input type="date" name="date" id="date" required />
-                </label>
-                <label
-                  >Ώρα
-                  <select name="time" id="time-select" required>
-                    <option value="" disabled selected>Επιλογή ώρας</option>
-                  </select>
-                </label>
-              </div>
-
-              <div class="row" style="margin-top: 8px">
-                <label
-                  >Ονοματεπώνυμο
-                  <input name="name" required />
-                </label>
-                <label
-                  >Τηλέφωνο
-                  <input type="tel" name="phone" />
-                </label>
-              </div>
-
-              <label style="margin-top: 8px"
-                >Email
-                <input type="email" name="email" />
-              </label>
-
-              <label style="margin-top: 8px"
-                >Σημειώσεις (προαιρετικά)
-                <textarea name="notes" rows="3"></textarea>
-              </label>
-
-              <div
-                style="
-                  display: flex;
-                  justify-content: flex-end;
-                  gap: 8px;
-                  margin-top: 12px;
-                "
-              >
-                <button type="reset" class="btn secondary">Άκυρο</button>
-                <button class="btn" type="submit">Επιβεβαίωση</button>
-              </div>
-
-              <div id="book-msg" class="muted" style="margin-top: 8px"></div>
-            </form>
-
-            <div class="muted" style="margin-top: 10px; font-size: 12px">
-              *Demo: τα “κενά ραντεβού” αποθηκεύονται στη συσκευή σας
-              (localStorage). Για πραγματικό online σύστημα (όλοι βλέπουν τα
-              κενά), θέλει backend.
-            </div>
-          </div>-->
         </div>
       </section>
     </main>
@@ -461,9 +425,6 @@
           Το περιεχόμενο της ιστοσελίδας είναι ενημερωτικό και δεν υποκαθιστά
           ιατρική εξέταση ή διάγνωση.
         </div>
-        <!--<a class="footer-top" href="#top" aria-label="Πάνω">
-          <i data-lucide="arrow-up"></i>
-        </a>-->
       </div>
     </footer>
 
@@ -514,109 +475,19 @@
       })();
 
       lucide.createIcons();
+
+      (function () {
+        const navbar = document.getElementById("navbar");
+
+        function onScroll() {
+          const show = window.scrollY > 60; // πόσο scroll θέλεις για να εμφανιστεί
+          navbar.classList.toggle("nav-visible", show);
+          document.body.classList.toggle("has-nav", show);
+        }
+
+        window.addEventListener("scroll", onScroll, { passive: true });
+        onScroll();
+      })();
     </script>
-    <!--<script>
-      // Footer year
-      document.getElementById("y").textContent = new Date().getFullYear();
-
-      // Booking (demo v1): slots + localStorage "booked"
-      const slots = [
-        "09:00",
-        "09:30",
-        "10:00",
-        "10:30",
-        "11:00",
-        "11:30",
-        "12:00",
-        "12:30",
-        "17:00",
-        "17:30",
-        "18:00",
-        "18:30",
-        "19:00",
-      ];
-
-      const dateEl = document.getElementById("date");
-      const timeSelect = document.getElementById("time-select");
-      const form = document.getElementById("book-form");
-      const msg = document.getElementById("book-msg");
-
-      // set min date = today
-      const today = new Date();
-      const yyyy = today.getFullYear();
-      const mm = String(today.getMonth() + 1).padStart(2, "0");
-      const dd = String(today.getDate()).padStart(2, "0");
-      dateEl.min = `${yyyy}-${mm}-${dd}`;
-
-      function keyForDate(dateStr) {
-        return `booked_${dateStr}`;
-      }
-
-      function getBooked(dateStr) {
-        try {
-          return JSON.parse(localStorage.getItem(keyForDate(dateStr)) || "[]");
-        } catch {
-          return [];
-        }
-      }
-
-      function setBooked(dateStr, arr) {
-        localStorage.setItem(keyForDate(dateStr), JSON.stringify(arr));
-      }
-
-      function renderTimes() {
-        const dateStr = dateEl.value;
-        timeSelect.innerHTML =
-          '<option value="" disabled selected>Επιλογή ώρας</option>';
-
-        if (!dateStr) return;
-
-        const booked = new Set(getBooked(dateStr));
-        slots.forEach((t) => {
-          const opt = document.createElement("option");
-          opt.value = t;
-          opt.textContent = booked.has(t) ? `${t} (κλεισμένο)` : t;
-          opt.disabled = booked.has(t);
-          timeSelect.appendChild(opt);
-        });
-      }
-
-      dateEl.addEventListener("change", () => {
-        msg.textContent = "";
-        renderTimes();
-      });
-
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        msg.textContent = "";
-
-        const data = new FormData(form);
-        const dateStr = data.get("date");
-        const timeStr = data.get("time");
-
-        if (!dateStr || !timeStr) {
-          msg.textContent = "Παρακαλώ επιλέξτε ημερομηνία και ώρα.";
-          return;
-        }
-
-        const booked = getBooked(dateStr);
-        if (booked.includes(timeStr)) {
-          msg.textContent =
-            "Αυτό το slot δεν είναι διαθέσιμο. Επιλέξτε άλλη ώρα.";
-          renderTimes();
-          return;
-        }
-
-        booked.push(timeStr);
-        setBooked(dateStr, booked);
-
-        msg.textContent = `✅ Καταχωρήθηκε demo αίτημα για ${dateStr} στις ${timeStr}. (local)`;
-        form.reset();
-        renderTimes();
-      });
-
-      // initial render
-      renderTimes();
-    </>-->
   </body>
 </html>

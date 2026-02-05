@@ -826,6 +826,164 @@ i[data-lucide] {
   animation-delay: 180ms;
 }
 
+/* Full-screen intro */
+.intro {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  position: relative;
+  padding: 28px 16px;
+  overflow: hidden;
+}
+
+/* very subtle premium background */
+.intro::before {
+  content: "";
+  position: absolute;
+  inset: -30%;
+  background:
+    radial-gradient(
+      700px 260px at 50% 25%,
+      rgba(110, 231, 255, 0.1),
+      transparent 60%
+    ),
+    radial-gradient(
+      700px 260px at 50% 60%,
+      rgba(167, 139, 250, 0.08),
+      transparent 60%
+    );
+  transform: rotate(6deg);
+  pointer-events: none;
+}
+
+.intro-inner {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  display: grid;
+  gap: 12px;
+  justify-items: center;
+}
+
+.intro-logo {
+  width: 96px;
+  height: auto;
+  display: block;
+  opacity: 0.95;
+}
+
+.intro-name {
+  font-weight: 900;
+  letter-spacing: 0.2px;
+  font-size: clamp(18px, 2.4vw, 26px);
+}
+
+.intro-quote {
+  max-width: 680px;
+  color: var(--muted);
+  font-size: clamp(14px, 1.7vw, 18px);
+  line-height: 1.6;
+}
+
+/* Intro animations (minimal, premium) */
+.intro-anim {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: introFade 700ms ease forwards;
+}
+
+.intro-anim.a1 {
+  animation-delay: 80ms;
+}
+.intro-anim.a2 {
+  animation-delay: 200ms;
+}
+.intro-anim.a3 {
+  animation-delay: 320ms;
+}
+
+@keyframes introFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  width: 42px;
+  height: 54px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.04);
+  display: grid;
+  place-items: center;
+  z-index: 2;
+}
+
+.scroll-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.75);
+  animation: scrollDot 1.2s ease-in-out infinite;
+}
+
+@keyframes scrollDot {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0.35;
+  }
+  50% {
+    transform: translateY(8px);
+    opacity: 0.95;
+  }
+  100% {
+    transform: translateY(-10px);
+    opacity: 0.35;
+  }
+}
+
+/* Navbar hidden initially, appears after scroll */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9998;
+
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.navbar.nav-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Add top spacing when navbar is visible so content doesn't jump */
+body.has-nav {
+  padding-top: 74px; /* άλλαξε αν το header σου είναι άλλο ύψος */
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .intro-anim,
+  .scroll-dot {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
 @keyframes fadeUp {
   to {
     opacity: 1;
