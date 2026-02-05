@@ -881,7 +881,7 @@ i[data-lucide] {
 .intro-quote {
   max-width: 680px;
   color: var(--muted);
-  font-size: clamp(14px, 1.7vw, 18px);
+  font-size: clamp(20px, 2.6vw, 28px);
   line-height: 1.6;
 }
 
