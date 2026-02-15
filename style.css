@@ -14,6 +14,7 @@
 }
 html,
 body {
+  height: 100%;
   margin: 0;
   padding: 0;
   font-family:
@@ -298,6 +299,26 @@ a {
   text-align: center;
 }
 
+.section-indicator {
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  width: 42px;
+  height: 54px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.04);
+  display: grid;
+  place-items: center;
+  z-index: 2;
+}
+
+/* για να δουλέψει position:absolute, το section πρέπει να είναι relative */
+.snap-section {
+  position: relative;
+}
+
 /* Grids & cards (ίσα μεγέθη) */
 .grid {
   display: grid;
@@ -365,19 +386,6 @@ a {
   border-color: rgba(167, 139, 250, 0.28);
   background: rgba(255, 255, 255, 0.06);
 }
-
-/*.about-grid .card {
-  transition:
-    transform 160ms ease,
-    background 160ms ease,
-    border-color 160ms ease;
-}
-
-.about-grid .card:hover {
-  transform: translateY(-2px);
-  border-color: rgba(110, 231, 255, 0.22);
-  background: rgba(255, 255, 255, 0.055);
-}*/
 
 /* Contact / Booking */
 .contact-card {
@@ -1040,6 +1048,8 @@ body.has-nav {
 /* Full-screen sections */
 .snap-section {
   min-height: 100vh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
   display: grid;
   align-items: center;
   padding: 84px 0; /* χώρο για navbar */
@@ -1053,8 +1063,12 @@ body.has-nav {
   }
 
   .snap-section {
+    min-height: 100vh;
     scroll-snap-align: start;
     scroll-snap-stop: always;
+    display: grid;
+    align-items: center;
+    padding: 84px 0;
   }
 }
 
@@ -1062,6 +1076,10 @@ body.has-nav {
 @media (max-width: 980px) {
   html {
     scroll-snap-type: none;
+  }
+  .snap-section {
+    min-height: auto;
+    padding: 0;
   }
 }
 
