@@ -1077,9 +1077,27 @@ body.has-nav {
   html {
     scroll-snap-type: none;
   }
+  /* κρατάμε τα sections "κανονικά", αλλά το intro παραμένει full screen */
   .snap-section {
+    scroll-snap-align: none;
+    scroll-snap-stop: normal;
+  }
+
+  /* μην χαλάς το full-screen intro */
+  .intro.snap-section,
+  .intro {
+    min-height: 100vh;
+    padding: 28px 16px;
+  }
+
+  /* τα υπόλοιπα sections να έχουν φυσιολογικό padding */
+  .snap-section:not(.intro) {
     min-height: auto;
-    padding: 0;
+    padding: 56px 0;
+  }
+
+  .hero {
+    display: none !important;
   }
 }
 
