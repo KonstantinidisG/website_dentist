@@ -1095,10 +1095,6 @@ body.has-nav {
     min-height: auto;
     padding: 56px 0;
   }
-
-  .hero {
-    display: none !important;
-  }
 }
 
 @keyframes smileDraw {
@@ -1132,7 +1128,7 @@ body.has-nav {
     display: none;
   }
   .hero {
-    display: none;
+    display: none !important;
   }
   .about-grid {
     grid-template-columns: 1fr;
